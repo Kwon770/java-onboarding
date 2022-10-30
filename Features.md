@@ -5,5 +5,5 @@
 - [x] ```getNumberSumScore(List<Integer>)``` 구현
 - [x] ```getNumberMultiplyScore(List<Integer>)``` 구현
 - [x] solution()과 기능 함수 연결
-- [ ] getMaxPersonalScore -> getPersonalScore 이름 변경
+- [x] getMaxPersonalScore -> getPersonalScore 이름 변경
 - [ ] 예외사항 점검을 위한 검증 함수들 추가

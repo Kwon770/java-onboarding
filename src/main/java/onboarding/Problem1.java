@@ -8,8 +8,8 @@ class Problem1 {
         int answer = Integer.MAX_VALUE;
 
         try {
-            int pobiScore = getMaxPersonalScore(pobi);
-            int crongScore = getMaxPersonalScore(crong);
+            int pobiScore = getPersonalScore(pobi);
+            int crongScore = getPersonalScore(crong);
 
             if (pobiScore > crongScore) {
                 answer = 1;
@@ -25,7 +25,7 @@ class Problem1 {
         return answer;
     }
 
-    private static int getMaxPersonalScore(List<Integer> pageNumbers) {
+    private static int getPersonalScore(List<Integer> pageNumbers) {
         List<Integer> leftPageNumberLetters = convertToList(pageNumbers.get(0));
         List<Integer> rightPageNumberLetters = convertToList(pageNumbers.get(1));
 
