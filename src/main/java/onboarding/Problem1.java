@@ -1,6 +1,6 @@
 package onboarding;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 class Problem1 {
@@ -8,6 +8,9 @@ class Problem1 {
         int answer = Integer.MAX_VALUE;
 
         try {
+            validateInput(pobi);
+            validateInput(crong);
+
             int pobiScore = getPersonalScore(pobi);
             int crongScore = getPersonalScore(crong);
 
@@ -25,6 +28,45 @@ class Problem1 {
         return answer;
     }
 
+    private static void validateInput(List<Integer> input) {
+        validatePagesLength(input);
+        validatePageRange(input);
+        validatePageNumberValue(input.get(0));
+        validatePageNumberValue(input.get(1));
+        validatePageNumberIsLeft(input.get(0));
+        validatePageNumberIsRight(input.get(1));
+    }
+
+    private static void validatePagesLength(List<Integer> pages) {
+        if (pages.size() > 2) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private static void validatePageRange(List<Integer> pages) {
+        if (pages.get(1) - pages.get(0) != 1) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private static void validatePageNumberValue(Integer pageNumber) {
+        if (pageNumber < 1 || pageNumber > 400 ) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private static void validatePageNumberIsLeft(Integer pageNumber) {
+        if (pageNumber % 2 == 0) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private static void validatePageNumberIsRight(Integer pageNumber) {
+        if (pageNumber % 2 == 1) {
+            throw new IllegalArgumentException();
+        }
+    }
+
     private static int getPersonalScore(List<Integer> pageNumbers) {
         List<Integer> leftPageNumberLetters = convertToList(pageNumbers.get(0));
         List<Integer> rightPageNumberLetters = convertToList(pageNumbers.get(1));
@@ -37,7 +79,7 @@ class Problem1 {
     }
 
     private static List<Integer> convertToList(Integer integer) {
-        List<Integer> list = Collections.emptyList();
+        List<Integer> list = new ArrayList<>();
         while (integer > 0) {
             list.add(integer % 10);
             integer /= 10;
