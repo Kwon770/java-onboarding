@@ -41,6 +41,11 @@ class Problem1 {
     }
 
     private static int getNumberMultiplyScore(List<Integer> letters) {
-        return 0;
+        int score = 1;
+        for (Integer letter : letters) {
+            score *= letter;
+        }
+
+        return score;
     }
 }
