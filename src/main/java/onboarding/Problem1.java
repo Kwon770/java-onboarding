@@ -1,5 +1,6 @@
 package onboarding;
 
+import java.util.Collections;
 import java.util.List;
 
 class Problem1 {
@@ -7,6 +8,16 @@ class Problem1 {
         int answer = Integer.MAX_VALUE;
 
         return answer;
+    }
+
+    private static List<Integer> convertToList(Integer integer) {
+        List<Integer> list = Collections.emptyList();
+        while (integer > 0) {
+            list.add(integer % 10);
+            integer /= 10;
+        }
+
+        return list;
     }
 
     private static int getMaxScore(List<Integer> scores) {
