@@ -32,7 +32,12 @@ class Problem1 {
     }
 
     private static int getNumberSumScore(List<Integer> letters) {
-        return 0;
+        int score = 0;
+        for (Integer letter : letters) {
+            score += letter;
+        }
+
+        return score;
     }
 
     private static int getNumberMultiplyScore(List<Integer> letters) {
