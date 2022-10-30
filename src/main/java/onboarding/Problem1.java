@@ -14,7 +14,6 @@ class Problem1 {
     }
 
     private static int getNumberSumScore(String number) {
-        return 0;
     }
 
     private static int getNumberMultiplyScore(String number) {
