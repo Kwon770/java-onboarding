@@ -10,6 +10,17 @@ class Problem1 {
         return answer;
     }
 
+    private static int getMaxPersonalScore(List<Integer> pageNumbers) {
+        List<Integer> leftPageNumberLetters = convertToList(pageNumbers.get(0));
+        List<Integer> rightPageNumberLetters = convertToList(pageNumbers.get(1));
+
+        return Integer.max(getMaxPageScore(leftPageNumberLetters), getMaxPageScore(rightPageNumberLetters));
+    }
+
+    private static int getMaxPageScore(List<Integer> pageNumberLetters) {
+        return Integer.max(getNumberSumScore(pageNumberLetters), getNumberMultiplyScore(pageNumberLetters));
+    }
+
     private static List<Integer> convertToList(Integer integer) {
         List<Integer> list = Collections.emptyList();
         while (integer > 0) {
@@ -20,14 +31,11 @@ class Problem1 {
         return list;
     }
 
-    private static int getMaxScore(List<Integer> scores) {
-        return Integer.max(getNumberSumScore(scores.get(0).toString()), getNumberMultiplyScore(scores.get(1).toString()));
+    private static int getNumberSumScore(List<Integer> letters) {
+        return 0;
     }
 
-    private static int getNumberSumScore(String number) {
-    }
-
-    private static int getNumberMultiplyScore(String number) {
+    private static int getNumberMultiplyScore(List<Integer> letters) {
         return 0;
     }
 }
